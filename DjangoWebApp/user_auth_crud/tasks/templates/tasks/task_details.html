@@ -1,0 +1,15 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}{{ task.title }}{% endblock%}
+
+{% block content %}
+<h1>{{ task.title }}</h1>
+<p> by {{ task.user }} on {{ task.created_at }} </p>
+
+<p align="justify">{{ task.description }}</p>
+<br>
+
+<a href="{% url 'task_list' %}" class="btn btn-secondary">Back</a>&nbsp&nbsp&nbsp
+<a href="{% url 'task_update' pk=task.pk %}" class="btn btn-primary">Update</a>
+
+{% endblock %}
